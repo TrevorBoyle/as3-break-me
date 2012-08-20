@@ -4,7 +4,8 @@ package
 	{
 		public function AwesomeFeatureTwo()
 		{
-			trace("Trevor's second awesome feature!")	
+			trace("Trevor's second awesome feature!");
+			trace("Small change in release branch");
 		}
 	}
 }
