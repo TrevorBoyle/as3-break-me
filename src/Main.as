@@ -7,6 +7,10 @@ package
 		public function Main()
 		{
 			trace("Trevor can use Git!");
+			
+			var dan : DanFeatureWang = new DanFeatureWang();
+			
+			trace("So can Dan");
 		}
 	}
 }
