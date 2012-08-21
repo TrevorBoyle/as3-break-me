@@ -10,7 +10,7 @@ package
 			
 			var dan : DanFeatureWang = new DanFeatureWang();
 			
-			trace("So can Dan");
+			trace("So can Dan...");
 		}
 	}
 }
