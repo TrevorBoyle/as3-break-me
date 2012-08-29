@@ -10,7 +10,7 @@ package
 			
 			var dan : DanFeatureWang = new DanFeatureWang();
 			var af : AwsomerFeature = new AwsomerFeature();
-			
+			var nf : NickFeature = new NickFeature();
 			trace("So can Dan");
 		}
 	}
