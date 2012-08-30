@@ -4,7 +4,7 @@ package
 	{
 		public function NickFeature()
 		{
-			trace("Nick's test classs")	
+			trace("Updated Nick's test class")	
 		}
 	}
 }
