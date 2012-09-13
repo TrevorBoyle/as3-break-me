@@ -13,8 +13,9 @@ package
 		public function bbb():void{
 			//--------aaa
 		}
-		public function ccc():void{
-			//--------aaa--------------------------
+		
+		public function ddd():void{
+			//--------aaa
 		}
 	}
 }
