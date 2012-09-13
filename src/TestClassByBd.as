@@ -5,7 +5,6 @@ package
 		public function TestClassByBd()
 		{
 			//---------------------------------------
-			//????
 		}
 		
 		public function frick():void{
