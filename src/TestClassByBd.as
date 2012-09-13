@@ -4,7 +4,7 @@ package
 	{
 		public function TestClassByBd()
 		{
-			//---------------------------------------
+			//---------------------------------------asdfasdfasdfasdf
 		}
 		
 		public function frick():void{
