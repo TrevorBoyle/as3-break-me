@@ -14,6 +14,9 @@ package
 			//--------aaa
 		}
 		
+		public function ddd():void{
+			//--------aaa
+		}
 	}
 }
 
