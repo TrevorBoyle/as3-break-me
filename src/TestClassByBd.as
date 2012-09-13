@@ -11,7 +11,10 @@ package
 			
 		}
 		public function bbb():void{
-			//---------bbb
+			//--------aaa
+		}
+		public function ccc():void{
+			//--------aaa
 		}
 	}
 }
