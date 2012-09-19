@@ -5,7 +5,7 @@ package
 		public function DanFeatureWang()
 		{
 			trace("I'm great");
-			trace("Awesome!");
+			trace("Awesome! sdfsdfsdfsd");
 		}
 	}
 }
