@@ -4,7 +4,9 @@ package
 	{
 		public function AwesomeFeature()
 		{
-			trace("Trevor's awesome feature!")	
+			trace("Trevor's awesome feature!")
+
+			// hotfix	
 		}
 	}
 }
