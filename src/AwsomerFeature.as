@@ -9,7 +9,7 @@ package
 		{
 			super();
 			trace("Awsomer");
-			trace(" ");
+			trace("BRASS");
 		}
 	}
 }
