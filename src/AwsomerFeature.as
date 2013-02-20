@@ -9,6 +9,7 @@ package
 		{
 			super();
 			trace("Awsomer");
+			trace(" ");
 		}
 	}
 }
