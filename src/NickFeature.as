@@ -7,4 +7,5 @@ package
 			trace("Updated Nick's test class")	
 		}
 	}
+//	Restored inAppPurchase part 2
 }
