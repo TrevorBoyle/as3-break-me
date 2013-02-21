@@ -3,4 +3,5 @@ package{	import flash.display.Sprite;		public class Main extends Sprite	{	
 			trace("Test...");
 			//Restored in app purchase part 1
 
-//mmmmmm M&S burger		}	}}
+//mmmmmm M&S burger
+//mm release test		}	}}
