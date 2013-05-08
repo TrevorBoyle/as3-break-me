@@ -4,6 +4,7 @@ package
 	{
 		public function AwesomeFeature()
 		{
+I want to break it
 			trace("Trevor's awesome feature!")
 			lkjlkjlkjlkjlkj
 			// hotfix	
