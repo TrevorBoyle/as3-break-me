@@ -4,7 +4,7 @@ package
 	{
 		public function LuisFeature()
 		{
-			trace("foo");
+			trace("foo 1");
 		}
 	}
 }
