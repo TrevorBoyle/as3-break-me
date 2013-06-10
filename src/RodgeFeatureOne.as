@@ -7,6 +7,8 @@ package
 			trace("Added a feature");
 			
 			trace("Bllaaahhhh!!!! with update");
+			
+			trace("Hotfixed!");
 		}
 	}
 }
