@@ -19,17 +19,39 @@ package
 		}
 
 		[Test]
-		public function addTwoPlusTwo() : void
+		public function GivenTwoPlusTwoThenFourIsResult() : void
 		{
 			assertEquals(4, testSubject.addFunction(2, 2));
 		}
 		
 		[Test]
-		public function addTwoPlusThree() : void
+		public function GivenTwoPlusThreeThenFiveIsResult() : void
 		{
 			assertEquals(5, testSubject.addFunction(2, 3));
 		}
 		
+		[Test]
+		public function GivenFourPlusFiveThenNineIsResult() : void
+		{
+			assertEquals(9, testSubject.addFunction(4, 5));
+		}
 		
+		[Test]
+		public function WhenOverrunIntNoErrorThrown() : void
+		{
+			testSubject.addFunction(int.MAX_VALUE, 1);
+		}
+		
+		[Test]
+		public function GivenTwoMinusTwoThenZeroReturned() : void
+		{
+			assertEquals(0, testSubject.subtractFunction(2, 2));
+		}
+		
+		[Test]
+		public function GivenThreeMinusTwoThenOneReturned() : void
+		{
+			assertEquals(1, testSubject.subtractFunction(3, 2));
+		}
 	}
 }
