@@ -10,5 +10,10 @@ package
         {
             return 4;
         }
+
+        public function subtractFunction(value1 : int, value2 : int) : int
+        {
+            return 0;
+        }
     }
 }
