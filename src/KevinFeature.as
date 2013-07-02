@@ -6,10 +6,9 @@ package com.gamesys.breakme.kevin
         {
         }
 
-        public function addFunction(value1 : int, value2 : int) : int
+        public function addFunction(value1 : int, value2 : int) : string
         {
-            return 2;
+            return "two";
         }
-
     }
 }
