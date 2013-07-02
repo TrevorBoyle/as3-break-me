@@ -1,4 +1,4 @@
-package com.gamesys.breakme.kevin
+package
 {
     public class KevinFeature
     {
@@ -8,7 +8,7 @@ package com.gamesys.breakme.kevin
 
         public function addFunction(value1 : int, value2 : int) : int
         {
-            return 2;
+            return 4;
         }
 
     }

@@ -4,11 +4,11 @@ package
 	{
 		public function AwesomeFeature()
 		{
-I want to break it
+//I want to break it
 			trace("Trevor's awesome feature!")
-			lkjlkjlkjlkjlkj
+//			lkjlkjlkjlkjlkj
 			// hotfix	
-			Check ou this wicked feature!! 2222cxvv
+//			Check ou this wicked feature!! 2222cxvv
 		}
 	}
 }
