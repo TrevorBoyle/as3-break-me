@@ -1,0 +1,120 @@
+<project name="slotsofun-slot-engine" default="compile" basedir="../">
+
+	<!-- ================================= 
+          target: clean
+          Clean out the project for a fresh build.              
+         ================================= -->
+	<target name="clean" depends="init" description="Removes all artifacts and templates">
+		<delete dir="${target.dir}" includeemptydirs="true" />
+	</target>
+
+	<target name="init">
+		<property file="scripts/version.properties" />
+		<property file="scripts/user.properties" />
+		<dirname property="project.dir" file="${basedir}" />
+		<dirname property="workspace.dir" file="${project.dir}" />
+		<property file="scripts/default.properties" />
+		
+		<mkdir dir="${target.dir}"/>
+	</target>
+
+	<!-- =================================
+          target: compile
+          Compiles the application to a SWC
+         ================================= -->
+	<target name="compile" depends="init" description="Compile SWC">
+		<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
+		<compc output="${target.dir}/${project.versionedname}.swc" target-player="${compiler.target.player}" incremental="true">
+			<source-path path-element="${basedir}/${src.dir}" />
+			<include-sources dir="${src.dir}" includes="*" excludes="FlexUnitApplication.mxml" />
+			<compiler.external-library-path dir="${lib.dir}" append="true">
+				<include name="*.swc" />
+			</compiler.external-library-path>
+		</compc>
+	</target>
+
+	<!-- ================================= 
+	      target: compile-test-stubs
+	      Compiles a SWC which contains the Mock / Stub objects which child projects can use in their test-cases.
+	     ================================= -->
+	<target name="compile-test-stubs" depends="init" description="Compile SWC with TestCases and Stubs">
+		<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
+		<compc output="${target.dir}/${project.versionedname}-test-stubs.swc" target-player="${compiler.target.player}" incremental="true">
+			<source-path path-element="${basedir}/${src.dir}" />
+			<include-sources dir="${test-src.dir}" includes="**/**Mock**" />
+			<compiler.external-library-path dir="${lib.dir}" append="true">
+				<include name="*.swc" />
+			</compiler.external-library-path>
+			<compiler.external-library-path dir="${FLEXUNIT_HOME}" append="true">
+				<include name="*.swc" />
+			</compiler.external-library-path>
+		</compc>
+	</target>	
+	
+	<!-- ================================= 
+	      target: test
+	      Executes the unit tests for this project against the precompiled SWC.
+	     ================================= -->
+	<target name="test" depends="clean, compile" description="Execute the Flex Unit Tests for this module">
+		<taskdef resource="flexUnitTasks.tasks" classpath="${FLEXUNIT_HOME}/flexUnitTasks-4.1.0-8.jar" />
+		
+		<mkdir dir="${report.dir}" />
+		<flexunit 
+			workingDir="${target.dir}" 
+			toDir="${report.dir}" 
+			headless="{flexunit.headless}"
+			haltonfailure="false">
+			<source dir="${basedir}/${test-src.dir}"/>
+			<testSource dir="${basedir}/${test-src.dir}">
+				<include name="**/Test*.as" />
+			</testSource>
+			<library dir="${target.dir}" />
+			<library dir="${lib.dir}" />
+			<library dir="${FLEXUNIT_HOME}">
+				<exclude name="flexunit-*-as3_*" />
+			</library>
+		</flexunit>		
+
+		<junitreport todir="${report.dir}">
+			<fileset dir="${report.dir}">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report format="frames" todir="${report.dir}/html" />
+		</junitreport>
+
+		<fail if="flexunit.failed" />
+	</target>
+	
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: analyse
+          Runs the static code analysis tools, typically this target will only be invoked as part of a CI build.                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="analyse" depends="init">
+		<taskdef name="flexCpd" classname="com.adobe.ac.cpd.ant.FlexCpdAntTask">
+			<classpath>
+				<fileset dir="${FLEX_PMD}" includes="*.jar" />
+			</classpath>
+		</taskdef>
+		<taskdef name="flexPmd" classname="com.adobe.ac.pmd.ant.FlexPmdAntTask">
+			<classpath>
+				<fileset dir="${FLEX_PMD}" includes="*.jar" />
+			</classpath>
+		</taskdef>
+		<taskdef name="flexMetrics" classname="com.adobe.ac.pmd.metrics.ant.FlexMetricsAntTask">
+			<classpath>
+				<fileset dir="${FLEX_PMD}" includes="*.jar" />
+			</classpath>
+		</taskdef>
+		
+		<mkdir dir="${report.dir}" />
+		
+		<flexCpd minimumTokenCount="25" outputFile="${report.dir}/cpd.xml">
+			<fileset dir="${src.dir}">
+				<include name="**/*.as"/>
+			</fileset>
+		</flexCpd>
+		<flexMetrics sourcedirectory="${src.dir}" outputfile="${report.dir}/javancss.xml"/>
+		<flexPmd sourceDirectory="${src.dir}" outputDirectory="${report.dir}"/>
+	</target>
+	
+</project>
