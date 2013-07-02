@@ -8,7 +8,7 @@ package
 
         public function addFunction(value1 : int, value2 : int) : int
         {
-            return 2;
+            return 4;
         }
 
     }

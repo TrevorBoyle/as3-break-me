@@ -64,8 +64,8 @@
 			toDir="${report.dir}" 
 			headless="{flexunit.headless}"
 			haltonfailure="false">
-			<source dir="${test-src.dir}"/>
-			<testSource dir="${test-src.dir}">
+			<source dir="${basedir}/${test-src.dir}"/>
+			<testSource dir="${basedir}/${test-src.dir}">
 				<include name="**/Test*.as" />
 			</testSource>
 			<library dir="${target.dir}" />
