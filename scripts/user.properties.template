@@ -1,0 +1,8 @@
+# Location of your FlexSDK.
+FLEX_HOME=/Applications/Adobe Flash Builder 4.5/sdks/4.5.1
+
+# Location of your FlexPMD binaries.
+FLEX_PMD=/Users/justin.kennedy/Library/Adobe/flex-pmd-1.2
+
+# Location of your FlexUnit 4.1 SWCs
+FLEXUNIT_HOME=/Applications/Adobe Flash Builder 4.5/utilities/flexunit_4_1/ASProject

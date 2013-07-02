@@ -1,4 +1,4 @@
-package com.gamesys.breakme.kevin
+package
 {
     public class KevinFeature
     {
