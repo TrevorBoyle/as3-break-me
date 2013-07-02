@@ -2,14 +2,14 @@ package
 {
 	import org.flexunit.asserts.assertEquals;
 	
-	public class TestKevinFeature
+	public class TestStupidMath
 	{
-		private var testSubject : KevinFeature;
+		private var testSubject : StupidMath;
 
 		[Before]
 		public function setup() : void
 		{
-			testSubject = new KevinFeature();
+			testSubject = new StupidMath();
 		}
 
 		[After]
@@ -23,5 +23,13 @@ package
 		{
 			assertEquals(4, testSubject.addFunction(2, 2));
 		}
+		
+		[Test]
+		public function addTwoPlusThree() : void
+		{
+			assertEquals(5, testSubject.addFunction(2, 3));
+		}
+		
+		
 	}
 }
