@@ -53,5 +53,11 @@ package
 		{
 			assertEquals(1, testSubject.subtractFunction(3, 2));
 		}
+		
+		[Test]
+		public function GivenThreeFactorialThenSixReturned() : void
+		{
+			assertEquals(6, testSubject.factorial(3));
+		}
 	}
 }

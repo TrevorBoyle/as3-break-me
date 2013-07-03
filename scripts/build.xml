@@ -26,7 +26,7 @@
 		<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
 		<compc output="${target.dir}/${project.versionedname}.swc" target-player="${compiler.target.player}" incremental="true">
 			<source-path path-element="${basedir}/${src.dir}" />
-			<include-sources dir="${src.dir}" includes="*" excludes="FlexUnitApplication.mxml" />
+			<include-sources dir="${src.dir}" includes="*" excludes="FlexUnitApplication.mxml, FlexUnitApplication.as" />
 			<compiler.external-library-path dir="${lib.dir}" append="true">
 				<include name="*.swc" />
 			</compiler.external-library-path>

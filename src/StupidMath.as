@@ -15,5 +15,10 @@ package
         {
             return value1 - value2;
         }
+		
+		public function factorial(value1 : int) : int
+		{
+			return 6;
+		}
     }
 }
