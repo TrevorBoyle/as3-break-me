@@ -1,19 +1,24 @@
 package
 {
-    public class KevinFeature
+    public class StupidMath
     {
-        public function KevinFeature()
+        public function StupidMath()
         {
         }
 
         public function addFunction(value1 : int, value2 : int) : int
         {
-            return 4;
+			return value1 + value2;
         }
 
         public function subtractFunction(value1 : int, value2 : int) : int
         {
-            return 0;
+            return value1 - value2;
         }
+		
+		public function factorial(value1 : int) : int
+		{
+			return 6;
+		}
     }
 }
