@@ -18,7 +18,13 @@ package
 		
 		public function factorial(value1 : int) : int
 		{
-			return 7;
+			var result : int = 0;
+			while (value1 > 0)
+			{
+				result += value1;
+				value1--;
+			}
+			return result;
 		}
     }
 }
