@@ -18,7 +18,7 @@ package
 		
 		public function factorial(value1 : int) : int
 		{
-			return 6;
+			return 7;
 		}
     }
 }
