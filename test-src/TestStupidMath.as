@@ -59,5 +59,11 @@ package
 		{
 			assertEquals(6, testSubject.factorial(3));
 		}
+		
+		[Test]
+		public function GivenFiveFactorialThenFifteenReturned() : void
+		{
+			assertEquals(15, testSubject.factorial(5));
+		}
 	}
 }
