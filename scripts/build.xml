@@ -27,9 +27,11 @@
 		<compc output="${target.dir}/${project.versionedname}.swc" target-player="${compiler.target.player}" incremental="true">
 			<source-path path-element="${basedir}/${src.dir}" />
 			<include-sources dir="${src.dir}" includes="*" excludes="FlexUnitApplication.mxml, FlexUnitApplication.as" />
-			<!--<compiler.external-library-path dir="${lib.dir}" append="true">
-				<include name="*.swc" />-->
+			<!--
+			<compiler.external-library-path dir="${lib.dir}" append="true">
+				<include name="*.swc" />
 			</compiler.external-library-path>
+			-->
 		</compc>
 	</target>
 
@@ -42,9 +44,11 @@
 		<compc output="${target.dir}/${project.versionedname}-test-stubs.swc" target-player="${compiler.target.player}" incremental="true">
 			<source-path path-element="${basedir}/${src.dir}" />
 			<include-sources dir="${test-src.dir}" includes="**/**Mock**" />
+<!--
 			<compiler.external-library-path dir="${lib.dir}" append="true">
 				<include name="*.swc" />
 			</compiler.external-library-path>
+-->
 			<compiler.external-library-path dir="${FLEXUNIT_HOME}" append="true">
 				<include name="*.swc" />
 			</compiler.external-library-path>
@@ -69,7 +73,7 @@
 				<include name="**/Test*.as" />
 			</testSource>
 			<library dir="${target.dir}" />
-			<library dir="${lib.dir}" />
+			<!-- <library dir="${lib.dir}" /> -->
 			<library dir="${FLEXUNIT_HOME}">
 				<exclude name="flexunit-*-as3_*" />
 			</library>
