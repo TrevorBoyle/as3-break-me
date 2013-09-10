@@ -24,7 +24,7 @@
          ================================= -->
 	<target name="compile" depends="init" description="Compile SWC">
 		<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
-		<compc output="${target.dir}/${project.versionedname}.swc" target-player="${compiler.target.player}" incremental="true">
+		<compc output="${target.dir}/${project.versionedname}.swc" target-player="${compiler.target.player}" incremental="false">
 			<source-path path-element="${basedir}/${src.dir}" />
 			<include-sources dir="${src.dir}" includes="*" excludes="FlexUnitApplication.mxml, FlexUnitApplication.as" />
 			<!--
@@ -67,7 +67,8 @@
 			workingDir="${target.dir}" 
 			toDir="${report.dir}" 
 			headless="{flexunit.headless}"
-			haltonfailure="false">
+			haltonfailure="false"
+			localTrusted="true">
 			<source dir="${basedir}/${test-src.dir}"/>
 			<testSource dir="${basedir}/${test-src.dir}">
 				<include name="**/Test*.as" />
