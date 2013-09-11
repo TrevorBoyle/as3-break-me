@@ -62,7 +62,6 @@
 	<target name="test" depends="clean, compile" description="Execute the Flex Unit Tests for this module">
 		<taskdef resource="flexUnitTasks.tasks" classpath="${FLEXUNIT_HOME}/flexUnitTasks-4.1.0-8.jar" />
 		
-		<mkdir dir="${report.dir}" />
 		<flexunit 
 			workingDir="${target.dir}" 
 			toDir="${report.dir}" 
