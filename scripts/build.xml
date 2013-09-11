@@ -79,13 +79,16 @@
 				<exclude name="flexunit-*-as3_*" />
 			</library>
 		</flexunit>		
-
+		
+		<!--
+		command="${FLASHPLAYER}"
 		<junitreport todir="${report.dir}">
 			<fileset dir="${report.dir}">
 				<include name="TEST-*.xml" />
 			</fileset>
 			<report format="frames" todir="${report.dir}/html" />
 		</junitreport>
+		-->
 
 		<fail if="flexunit.failed" />
 	</target>
