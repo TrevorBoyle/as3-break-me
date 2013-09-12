@@ -65,7 +65,7 @@
 		<flexunit 
 			workingDir="${target.dir}" 
 			toDir="${report.dir}" 
-			headless="{flexunit.headless}"
+			headless="true"
 			haltonfailure="false"
 			verbose="true"
 			localTrusted="true">
