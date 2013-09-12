@@ -67,6 +67,7 @@
 			toDir="${report.dir}" 
 			headless="{flexunit.headless}"
 			haltonfailure="false"
+			verbose="true"
 			localTrusted="true">
 			<source dir="${basedir}/${test-src.dir}"/>
 			<testSource dir="${basedir}/${test-src.dir}">
